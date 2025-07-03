@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Expenses.css";
-import Sidebar from "../components/sidebar";
 
 const ExpenseTracker = () => {
   const [expenses, setExpenses] = useState([
@@ -21,7 +20,6 @@ const ExpenseTracker = () => {
 
   return (
     <div className="container">
-      <Sidebar/>
       <h2>Expenses</h2>
       <table>
         <thead>

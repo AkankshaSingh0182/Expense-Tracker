@@ -1,23 +1,42 @@
-import React from 'react'
-import './Dashboard.css';
-import { Link, Outlet } from 'react-router-dom'
+import React from "react";
+import Sidebar from "../components/Sidebar";
+import { Outlet } from "react-router-dom";
+
+const NAVBAR_HEIGHT = 60; // Adjust if your navbar is taller
+
 const Dashboard = () => {
   return (
-  
-    <div className="dashboard">
-          <li><Link to="/expenses">Expenses</Link></li>
-          <li><Link to="/budget">Budget</Link></li>
-          <li><Link to="/budgetdetails">Budget details</Link></li>
-          <li><Link to="/budget-allocation">Budget Allocation</Link></li>
-          <li><Link to="/delete-expenses">Delete Expenses</Link></li>
-          <li><Link to="/newexpense">Add New Expense</Link></li>
-          <li><Link to="/category">category</Link></li>
-          <li><Link to="/budget-summary">Budget Summary</Link></li>
-          <li><Link to="/CustomBudget">Create Custom Budget</Link></li>
-          <li><Link to="/recent-expense">Recent Expense</Link></li>
-          
-    </div>
-  )
-}
+    <div style={{ display: "flex" }}>
+      {/* Sidebar - fixed and below navbar */}
+      <div
+        style={{
+          width: "240px",
+          position: "fixed",
+          top: `${NAVBAR_HEIGHT}px`,
+          left: 0,
+          height: `calc(100vh - ${NAVBAR_HEIGHT}px)`,
+          zIndex: 1,
+        }}
+      >
+        <Sidebar />
+      </div>
 
-export default Dashboard
+      {/* Main Content - margin-left to avoid sidebar, margin-top to avoid navbar */}
+      <div
+        style={{
+          marginLeft: "240px",
+          marginTop: `${NAVBAR_HEIGHT}px`,
+          padding: "20px",
+          flex: 1,
+          height: `calc(100vh - ${NAVBAR_HEIGHT}px)`,
+          overflowY: "auto",
+          boxSizing: "border-box",
+        }}
+      >
+        <Outlet />
+      </div>
+    </div>
+  );
+};
+
+export default Dashboard;
