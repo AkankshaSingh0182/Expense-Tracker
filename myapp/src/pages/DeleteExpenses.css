@@ -1,0 +1,16 @@
+.analytics-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-top: 4px solid #e74c3c;
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.analytics-container h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #333;
+}

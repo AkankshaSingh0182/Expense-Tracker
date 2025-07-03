@@ -1,0 +1,42 @@
+.dashboard-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.chart-section, .table-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.top-expense-date {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.table-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.table-section th,
+.table-section td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.table-section tr:nth-child(even) {
+  background-color: #f9f9f9;
+}

@@ -1,0 +1,22 @@
+.summary-container {
+  padding: 30px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.budget-name {
+  color: #4CAF50;
+}
+
+.budget-details {
+  margin: 20px 0;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
