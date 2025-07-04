@@ -32,9 +32,13 @@ th {
 
 button.delete {
   color: red;
-  background: none;
+  /* background: none;
   border: none;
-  cursor: pointer;
+  cursor: pointer; */
+  text-decoration: none;
+}
+button.delete:hover{
+  text-decoration: underline;
 }
 
 .add-btn {
@@ -50,3 +54,18 @@ button.delete {
 .add-btn:hover {
   background-color: #0056b3;
 }
+
+.side {
+  width: 220px;
+  background-color: #e0f0f8;
+  padding: 15px;
+
+  
+  
+  
+}
+
+ .content {
+  flex: 1;
+  padding: 15px;
+} 
