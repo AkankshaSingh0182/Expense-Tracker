@@ -1,22 +1,27 @@
-import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Outlet,
+} from "react-router-dom";
+import Navbar from "./components/Navbar";
 
 // Import all pages
-import Home from './pages/home';
-import Register from './pages/Register';
-import Login from './pages/Login';
-import Expenses from './pages/Expenses';
-import Budget from './pages/Budget';
-import BudgetDetails from './pages/BudgetDetails';
-import BudgetAllocation from './pages/BudgetAllocation';
-import DeleteExpenses from './pages/DeleteExpenses';
-import NewExpense from './pages/NewExpense';
-import Category from './components/Category';
-import BudgetSummary from './pages/BudgetSummary';
-import CustomBudget from './pages/CustomBudget';
-import RecentExpense from './pages/RecentExpense';
-import Dashboard from './pages/Dashboard';
-
+import Home from "./pages/home";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import Expenses from "./pages/Expenses";
+import Budget from "./pages/Budget";
+import BudgetDetails from "./pages/BudgetDetails";
+import BudgetAllocation from "./pages/BudgetAllocation";
+import DeleteExpenses from "./pages/DeleteExpenses";
+import NewExpense from "./pages/NewExpense";
+import Category from "./components/Category";
+import BudgetSummary from "./pages/BudgetSummary";
+import CustomBudget from "./pages/CustomBudget";
+import RecentExpense from "./pages/RecentExpense";
+import Dashboard from "./pages/Dashboard";
+import DashboardHome from "./pages/DashboardHome";
 
 function App() {
   return (
@@ -26,18 +31,19 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard/>} /> 
-        <Route path="/expenses" element={<Expenses />} />
-        <Route path="/budget" element={<Budget />} />
-        <Route path="/budgetdetails" element={<BudgetDetails />} />
-        <Route path="/budgetallocation" element={<BudgetAllocation />} />
-        <Route path="/delete-expenses" element={<DeleteExpenses />} />
-        <Route path="/newexpense" element={<NewExpense />} />
-        <Route path="/category" element={<Category />} />
-        <Route path="/budget-summary" element={<BudgetSummary />} />
-        <Route path="/CustomBudget" element={<CustomBudget />} />
-        <Route path="/recent-expense" element={<RecentExpense />} />
-       
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route index element={<DashboardHome />} /> {/* ✅ This is rendered at /dashboard */}
+          <Route path="expenses" element={<Expenses />} />
+          <Route path="budget" element={<Budget />} />
+          <Route path="budgetdetails" element={<BudgetDetails />} />
+          <Route path="budgetallocation" element={<BudgetAllocation />} />
+          <Route path="delete-expenses" element={<DeleteExpenses />} />
+          <Route path="newexpense" element={<NewExpense />} />
+          <Route path="category" element={<Category />} />
+          <Route path="budget-summary" element={<BudgetSummary />} />
+          <Route path="CustomBudget" element={<CustomBudget />} />
+          <Route path="recent-expense" element={<RecentExpense />} />
+        </Route>
       </Routes>
     </Router>
   );
@@ -64,7 +70,7 @@ export default App;
 
 // function App() {
 //   return (
-//     <>  
+//     <>
 //     <BrowserRouter>
 //      <Navbar/>
 //       <Routes>
@@ -83,10 +89,9 @@ export default App;
 //           <Route path="/RecentExpense" element={<RecentExpense/>} />
 //       </Routes>
 //       <Footer/>
-//     </BrowserRouter> 
+//     </BrowserRouter>
 //     {/*
-      
-      
+
 //       {/* Hero Section */}
 //       {/* <section className="hero">
 //         <h2>Track Your Expenses Like Never Before</h2>
@@ -112,10 +117,9 @@ export default App;
 //           <p>Track your expenses on the go with our mobile-friendly app.</p>
 //         </div>
 //       </section> */}
-       
+
 //     {/* </div> } */}
 
-        
 //     </>
 //   )
 // }

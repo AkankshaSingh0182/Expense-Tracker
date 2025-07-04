@@ -1,21 +1,55 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-const Sidebar = () => {
-  return (
-    <div>
-       <li><Link to="/expenses">Expenses</Link></li>
-          <li><Link to="/budget">Budget</Link></li>
-          <li><Link to="/budgetdetails">Budget details</Link></li>
-          <li><Link to="/budget-allocation">Budget Allocation</Link></li>
-          <li><Link to="/delete-expenses">Delete Expenses</Link></li>
-          <li><Link to="/newexpense">Add New Expense</Link></li>
-          <li><Link to="/category">category</Link></li>
-          <li><Link to="/budget-summary">Budget Summary</Link></li>
-          <li><Link to="/CustomBudget">Create Custom Budget</Link></li>
-          <li><Link to="/recent-expense">Recent Expense</Link></li>
-          
-    </div>
-  )
-}
+import React from "react";
+import { NavLink } from "react-router-dom";
 
-export default Sidebar
+const Sidebar = () => {
+  const links = [
+    { to: "/dashboard/expenses", label: "Expenses" },
+    { to: "/dashboard/budget", label: "Budget" },
+    { to: "/dashboard/budgetdetails", label: "Budget Details" },
+    { to: "/dashboard/budgetallocation", label: "Budget Allocation" },
+    { to: "/dashboard/delete-expenses", label: "Delete Expenses" },
+    { to: "/dashboard/newexpense", label: "Add New Expense" },
+    { to: "/dashboard/category", label: "Category" },
+    { to: "/dashboard/budget-summary", label: "Budget Summary" },
+    { to: "/dashboard/CustomBudget", label: "Create Custom Budget" },
+    { to: "/dashboard/recent-expense", label: "Recent Expense" },
+  ];
+
+  return (
+    <div style={{
+      width: "240px",
+      height: "100vh",
+      backgroundColor: "#1f2937",
+      color: "#ffffff",
+      padding: "20px",
+      boxSizing: "border-box"
+    }}>
+      <h2 style={{ fontSize: "20px", marginBottom: "30px" }}>📊 Dashboard</h2>
+      <nav>
+        <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+          {links.map(({ to, label }) => (
+            <li key={to} style={{ marginBottom: "12px" }}>
+              <NavLink
+                to={to}
+                style={({ isActive }) => ({
+                  display: "block",
+                  padding: "5px 15px",
+                  borderRadius: "8px",
+                  backgroundColor: isActive ? "#374151" : "transparent",
+                  color: isActive ? "#ffffff" : "#d1d5db",
+                  textDecoration: "none",
+                  fontWeight: 500,
+                  transition: "0.2s ease-in-out"
+                })}
+              >
+                {label}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  );
+};
+
+export default Sidebar;
