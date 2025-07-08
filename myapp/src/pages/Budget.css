@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #dd9292;
 }
 
 .budget-container {
@@ -14,7 +14,7 @@ table {
   max-width: 900px;
   margin: auto;
   border-collapse: collapse;
-  background-color: white;
+  background-color: rgb(243, 149, 149);
   box-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
 

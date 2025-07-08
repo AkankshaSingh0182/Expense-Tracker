@@ -10,11 +10,11 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import Logout from "./pages/Logout";
 import Expenses from "./pages/Expenses";
 import Budget from "./pages/Budget";
 import BudgetDetails from "./pages/BudgetDetails";
 import BudgetAllocation from "./pages/BudgetAllocation";
-import DeleteExpenses from "./pages/DeleteExpenses";
 import NewExpense from "./pages/NewExpense";
 import Category from "./components/Category";
 import BudgetSummary from "./pages/BudgetSummary";
@@ -31,13 +31,13 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/logout" element={<Logout />} />
         <Route path="/dashboard" element={<Dashboard />}>
           <Route index element={<DashboardHome />} /> {/* ✅ This is rendered at /dashboard */}
           <Route path="expenses" element={<Expenses />} />
           <Route path="budget" element={<Budget />} />
           <Route path="budgetdetails" element={<BudgetDetails />} />
           <Route path="budgetallocation" element={<BudgetAllocation />} />
-          <Route path="delete-expenses" element={<DeleteExpenses />} />
           <Route path="newexpense" element={<NewExpense />} />
           <Route path="category" element={<Category />} />
           <Route path="budget-summary" element={<BudgetSummary />} />

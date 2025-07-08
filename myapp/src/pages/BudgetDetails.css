@@ -1,13 +1,13 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
+  background-color: #f4efef;
 }
 
 .budget-details-container {
   padding: 40px;
   text-align: center;
-  background-color: #fff;
+  background-color: #9e7e7e;
   max-width: 900px;
   margin: 30px auto;
   border-radius: 10px;

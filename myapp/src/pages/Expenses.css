@@ -2,7 +2,7 @@
   max-width: 800px;
   margin: 50px auto;
   padding: 20px;
-  background: #f8f8f8;
+  background: #f5d4d4;
   border-radius: 8px;
   text-align: center;
 }
@@ -16,12 +16,12 @@ h2 {
 table {
   width: 100%;
   border-collapse: collapse;
-  background: white;
+  background: rgb(146, 134, 134);
 }
 
 th, td {
   padding: 12px 15px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #897373;
   text-align: left;
 }
 

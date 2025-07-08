@@ -20,7 +20,13 @@ function HomePage() {
           <img src="https://media.licdn.com/dms/image/v2/D5612AQGplp7JKG6Iiw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1673950361361?e=2147483647&v=beta&t=L4d5P81GijVgU4u1yJtFLVsIqATkfWTrymEPSd_C6_o" alt="Expense Illustration" />
         </section>
       </main>
+      <br></br>
+         <button type="Signin">Register</button><br></br>
+         <p>Already have an account?</p>
+         <button type="Login">Login</button>
+
     </div>
+    
   );
 }
 

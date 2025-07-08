@@ -3,23 +3,22 @@ import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   const links = [
-    { to: "/dashboard/expenses", label: "Expenses" },
-    { to: "/dashboard/budget", label: "Budget" },
-    { to: "/dashboard/budgetdetails", label: "Budget Details" },
-    { to: "/dashboard/budgetallocation", label: "Budget Allocation" },
-    { to: "/dashboard/delete-expenses", label: "Delete Expenses" },
-    { to: "/dashboard/newexpense", label: "Add New Expense" },
-    { to: "/dashboard/category", label: "Category" },
-    { to: "/dashboard/budget-summary", label: "Budget Summary" },
-    { to: "/dashboard/CustomBudget", label: "Create Custom Budget" },
-    { to: "/dashboard/recent-expense", label: "Recent Expense" },
+    { to: "/dashboard/expenses", label: "🔷 Expenses" },
+    { to: "/dashboard/budget", label: "🔶 Budget" },
+    { to: "/dashboard/budgetdetails", label: "🔷 Budget Details" },
+    { to: "/dashboard/budgetallocation", label: "🔶 Budget Allocation" },
+    { to: "/dashboard/newexpense", label: "🔶 Add New Expense" },
+    { to: "/dashboard/category", label: "🔷 Category" },
+    { to: "/dashboard/budget-summary", label: "🔶 Budget Summary" },
+    { to: "/dashboard/CustomBudget", label: " 🔷 Custom Budget" },
+    { to: "/dashboard/recent-expense", label: "🔶 Recent Expense" },
   ];
 
   return (
     <div style={{
       width: "240px",
       height: "100vh",
-      backgroundColor: "#1f2937",
+      backgroundColor: "purple",
       color: "#ffffff",
       padding: "20px",
       boxSizing: "border-box"
