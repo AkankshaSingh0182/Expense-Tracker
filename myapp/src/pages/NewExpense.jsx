@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './NewExpense.css';
+import axios from 'axios';
 
 function AddExpenseForm() {
+  const [userId, setUserId] = useState(localStorage.getItem('userId') || '');
   const [expense, setExpense] = useState({
     date: '',
     category: '',
@@ -14,12 +16,20 @@ function AddExpenseForm() {
     setExpense({ ...expense, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    console.log('Expense Saved:', expense);
-    // You can send this data to backend or state
+   try {
+      const response = await axios.post(`http://localhost:3000/NewExpense/${userId}`, {expense});
+      console.log('Response:', response.data);
+      if( response.data.success){
+       setExpense('')
+       
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+    
   };
-
   return (
     <div className="form-container">
       <h2>Add New Expense</h2>

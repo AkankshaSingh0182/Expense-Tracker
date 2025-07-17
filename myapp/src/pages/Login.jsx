@@ -1,13 +1,27 @@
 import React, { useState } from 'react';
 import './Login.css'; // Import external CSS
-
+import axios from 'axios';
+import {useNavigate} from 'react-router-dom'
 const Login = () => {
-  const [username, setUsername] = useState('');
+  const [email, setemail] = useState('');
   const [password, setPassword] = useState('');
-
-  const handleLogin = (e) => {
+  const [userId, setUserId] = useState('')
+  const navigate = useNavigate();
+  const handleLogin = async(e) => {
     e.preventDefault();
-    alert(`Username: ${username}, Password: ${password}`);
+    try {
+      const response = await axios.post('http://localhost:3000/Login', {email,password});
+      console.log('Response:', response.data);
+      if( response.data.success){
+        setemail('');
+        setPassword('')
+        navigate('/dashboard');
+        localStorage.setItem('userId', response.data.user._id)
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+    // alert(`email: ${email}, Password: ${password}`);
     // In real apps, validate credentials here
   };
 
@@ -16,11 +30,11 @@ const Login = () => {
       <div className="login-box">
         <h2>Login</h2>
         <form onSubmit={handleLogin}>
-          <label>Username</label>
+          <label>email</label>
           <input 
-            type="text" 
-            value={username} 
-            onChange={(e) => setUsername(e.target.value)} 
+            type="email" 
+            value={email} 
+            onChange={(e) => setemail(e.target.value)} 
             required 
           />
 

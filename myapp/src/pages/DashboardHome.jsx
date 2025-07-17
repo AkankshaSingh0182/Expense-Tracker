@@ -1,6 +1,7 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
+import { Link } from 'react-router-dom';
 
 // Register chart components
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
@@ -53,7 +54,10 @@ const MonthlyTotalsChart = () => {
   return (
     <div className="chart-container">
       <Line data={data} options={options} /><br></br>
+      <Link to ="/dashboard/NewExpense">
       <button type="Add">Add New Expense</button>
+       </Link>
+
     </div>
   );
 };

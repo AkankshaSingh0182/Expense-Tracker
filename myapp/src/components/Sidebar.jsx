@@ -7,9 +7,8 @@ const Sidebar = () => {
     { to: "/dashboard/budget", label: "🔶 Budget" },
     { to: "/dashboard/budgetdetails", label: "🔷 Budget Details" },
     { to: "/dashboard/budgetallocation", label: "🔶 Budget Allocation" },
-    { to: "/dashboard/newexpense", label: "🔶 Add New Expense" },
-    { to: "/dashboard/category", label: "🔷 Category" },
-    { to: "/dashboard/budget-summary", label: "🔶 Budget Summary" },
+    { to: "/dashboard/newexpense", label: "🔷  Add New Expense" },
+    { to: "/dashboard/category", label: "🔶 Category" },
     { to: "/dashboard/CustomBudget", label: " 🔷 Custom Budget" },
     { to: "/dashboard/recent-expense", label: "🔶 Recent Expense" },
   ];

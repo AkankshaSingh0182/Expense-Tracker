@@ -1,7 +1,15 @@
 import React from "react";
 import "./Logout.css"; // Import your CSS
-
-function LogoutModal({ email, onConfirm, onCancel }) {
+import { useNavigate } from "react-router-dom";
+function LogoutModal() {
+  const navigate = useNavigate();
+  const onConfirm = () => {
+    localStorage.removeItem('userId');
+    navigate('/')
+  };
+const onCancel = () => {
+  navigate('/dashboard')
+};
   return (
     <div className="modal-overlay">
       <div className="modal">
@@ -28,6 +36,6 @@ function LogoutModal({ email, onConfirm, onCancel }) {
       </div>
     </div>
   );
-}
 
+}
 export default LogoutModal;

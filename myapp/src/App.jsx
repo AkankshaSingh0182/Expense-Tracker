@@ -17,7 +17,6 @@ import BudgetDetails from "./pages/BudgetDetails";
 import BudgetAllocation from "./pages/BudgetAllocation";
 import NewExpense from "./pages/NewExpense";
 import Category from "./components/Category";
-import BudgetSummary from "./pages/BudgetSummary";
 import CustomBudget from "./pages/CustomBudget";
 import RecentExpense from "./pages/RecentExpense";
 import Dashboard from "./pages/Dashboard";
@@ -40,7 +39,7 @@ function App() {
           <Route path="budgetallocation" element={<BudgetAllocation />} />
           <Route path="newexpense" element={<NewExpense />} />
           <Route path="category" element={<Category />} />
-          <Route path="budget-summary" element={<BudgetSummary />} />
+          {/* <Route path="budget-summary" element={<BudgetSummary />} /> */}
           <Route path="CustomBudget" element={<CustomBudget />} />
           <Route path="recent-expense" element={<RecentExpense />} />
         </Route>

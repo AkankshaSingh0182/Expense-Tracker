@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './CustomBudget.css';
+import axios from "axios";
 
 const CreateBudgetForm = () => {
   const [formData, setFormData] = useState({
@@ -30,11 +31,21 @@ const CreateBudgetForm = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit =  async(e) => {
     e.preventDefault();
-    console.log(formData); // You can post this to a server
-    alert("Budget Created Successfully!");
+    try {
+      const response = await axios.post(`http://localhost:3000/CustomBudget`,formData);
+      console.log('Response:', response.data);
+      if( response.data.success){
+       CreateBudgetForm('')
+       
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+    
   };
+    
 
   return (
     <form className="budget-form" onSubmit={handleSubmit}>

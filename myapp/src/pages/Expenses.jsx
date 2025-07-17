@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import "./Expenses.css";
+import { useEffect } from "react";
+import axios from "axios";
 
 const ExpenseTracker = () => {
-  const [expenses, setExpenses] = useState([
-    { date: "18/06/2023", category: "Transportation", amount: "£100.00", description: "Taxi" },
-    { date: "20/05/2023", category: "Bills", amount: "£700.00", description: "Electricity" },
-    { date: "15/05/2023", category: "Entertainment", amount: "£700.00", description: "Movie Ticket" },
-    { date: "10/03/2023", category: "Education", amount: "£500.00", description: "Fees" },
-    { date: "12/04/2023", category: "Bills", amount: "£500.00", description: "Fees" },
-    { date: "16/03/2023", category: "Food", amount: "£500.00", description: "Pizza" },
-    { date: "07/03/2023", category: "Food", amount: "£500.00", description: "Pizza" },
-    { date: "19/06/2023", category: "Shopping", amount: "£500.00", description: "Outfitters" },
-  ]);
-
-  const deleteExpense = (index) => {
+  const [userId, setUserId] = useState(localStorage.getItem('userId') || '')
+  const [expenses, setExpenses] = useState([]);
+  useEffect(()=>{
+    const getExpense=async()=>{
+      const res = await axios.get(`http://localhost:3000/getExpenses/${userId}`)
+      console.log(res.data);
+      setExpenses(res.data.expenses);
+    }
+    getExpense()
+  },[])
+  const deleteExpense = (userId, index) => {
+    axios.delete(`http://localhost:3000/deleteExpense/${userId}`)
     const newExpenses = expenses.filter((_, i) => i !== index);
     setExpenses(newExpenses);
   };
@@ -32,14 +34,14 @@ const ExpenseTracker = () => {
           </tr>
         </thead>
         <tbody>
-          {expenses.map((item, index) => (
+          {expenses?.map((item, index) => (
             <tr key={index}>
-              <td>{item.date}</td>
-              <td>{item.category}</td>
-              <td>{item.amount}</td>
-              <td>{item.description}</td>
+              <td>{item?.date}</td>
+              <td>{item?.category}</td>
+              <td>{item?.amount}</td>
+              <td>{item?.description}</td>
               <td>
-                <button className="delete" onClick={() => deleteExpense(index)}>
+                <button className="delete" onClick={() => deleteExpense(item._id, index)}>
                   Delete
                 </button>
               </td>
@@ -47,7 +49,7 @@ const ExpenseTracker = () => {
           ))}
         </tbody>
       </table>
-      <button className="add-btn">Add New Expense</button>
+       
     </div>
   );
 };

@@ -75,7 +75,6 @@ const BudgetTable = () => {
 
       <div className="buttons">
         <button className="select-btn">Select Budget</button>
-        <button className="add-btn">Add New Budget</button>
       </div>
     </div>
   );

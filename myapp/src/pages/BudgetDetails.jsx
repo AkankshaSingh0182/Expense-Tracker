@@ -1,5 +1,6 @@
 import React from 'react';
 import './BudgetDetails.css';
+import axios from 'axios';
 
 const BudgetDetails = () => {
   const budget = {
